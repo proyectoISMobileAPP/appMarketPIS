@@ -1,0 +1,35 @@
+page-lista-categoria {
+   ion-card {
+    position: relative;
+    text-align: center;
+  }
+
+  .card-title {
+    position: absolute;
+    top: 65%;
+    text-align: left;
+    font-size: 3.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #000;
+    font-family: "ONE DAY";
+
+  }
+
+  .card-subtitle {
+    font-size: 1.5em;
+    position: absolute;
+    text-align: left;
+    top: 85%;
+    width: 100%;
+    color: #000;
+    font-family: "Planer";
+  }
+  .boton{
+      position:absolute;
+      z-index: 2;
+      right: 5%;
+      top: 5%;
+      margin: auto;      
+  }
+}

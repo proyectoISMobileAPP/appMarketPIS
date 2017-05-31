@@ -1,0 +1,30 @@
+page-home {
+
+    ion-card {
+    position: relative;
+    text-align: center;
+  }
+  .titulo{
+    font-size: 3.0em;
+    font-weight: bold;
+    
+  }
+
+  .card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 3.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #000;
+    font-family: "ONE DAY";
+      }
+
+  .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: #fff;
+  }
+}
