@@ -8,15 +8,17 @@ import {ListaCategoriaPage} from '../lista-categoria/lista-categoria';
   templateUrl: 'home.html',
 })
 export class HomePage {
+  //base de datos local
   categorias=[{name: "Lacteos",image: "assets/img/lacteos.jpg"},
               {name: "Carnes",image: "assets/img/carnes.jpg"},
               {name: "Frutas",image: "assets/img/frutasyverduras.jpg"}];
   constructor(public navCtrl: NavController) {
   }
   
-  pushPage()
+  pushPage(categoria)
   {
     this.navCtrl.push(ListaCategoriaPage);
+    console.log(categoria);
   }
 
 }

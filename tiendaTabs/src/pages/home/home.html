@@ -13,7 +13,7 @@
    <ion-card *ngFor="let categoria of categorias">
     <img src={{categoria.image}}/>
     <div class="card-title">{{categoria.name}}</div>
-    <button ion-button class="boton" full color='verde' (click)="pushPage()">{{categoria.name}}</button>
+    <button ion-button class="boton" full color='verde' (click)="pushPage(categoria.name)">{{categoria.name}}</button>
   </ion-card>
  </ion-list>
 
