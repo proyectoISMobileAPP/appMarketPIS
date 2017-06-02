@@ -7,36 +7,22 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>listaCategoria</ion-title>
+    <ion-title>{{catSel}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <ion-card>
-    <button class="boton" color="verde" ion-button>
-        <ion-icon name="cart"></ion-icon>
-    </button>
-        <img src="assets/img/lacteos.jpg"/>
-    <div class="card-title">Leche</div>
-    <div class="card-subtitle">6.50 Bs</div>
-  </ion-card>
-  <ion-card>
-    <button class="boton" color="verde" ion-button>
-        <ion-icon name="cart"></ion-icon>
-    </button>
-    <img src="assets/img/carnes.jpg"/>
-    <div class="card-title">Huevos</div>
-    <div class="card-subtitle">50 ctvs</div>
-  </ion-card>
-  <ion-card>
-    <button class="boton" color="verde" ion-button>
-        <ion-icon name="cart"></ion-icon>
-    </button>
-    <img src="assets/img/frutasyverduras.jpg"/>
-    <div class="card-title">Mantequilla</div>
-    <div class="card-subtitle">10.50 Bs</div>
-  </ion-card>
+  <ion-list>
+   <ion-card *ngFor="let productos of productos">
+      <button class="boton" color="verde" ion-button>
+          <ion-icon name="cart"></ion-icon>
+      </button>
+      <img src={{productos.imagen}}/>
+      <div class="card-title">{{productos.prodName}}</div>
+      <div class="card-subtitle">{{productos.precio}}</div>
+    </ion-card>
+ </ion-list>
 
 </ion-content>

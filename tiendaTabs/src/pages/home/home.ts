@@ -17,8 +17,8 @@ export class HomePage {
   
   pushPage(categoria)
   {
-    this.navCtrl.push(ListaCategoriaPage);
+    this.navCtrl.push(ListaCategoriaPage,{catSeleccionada:categoria});
     console.log(categoria);
   }
-
+  
 }
