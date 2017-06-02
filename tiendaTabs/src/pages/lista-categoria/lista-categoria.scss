@@ -29,7 +29,16 @@ page-lista-categoria {
       position:absolute;
       z-index: 2;
       right: 5%;
-      top: 5%;
+      top: 25%;
       margin: auto;      
+  }
+  .entrada{
+    position:absolute;
+      z-index: 2;
+      right: 5%;
+      top: 5%;
+      width: 13%;
+      margin: auto; 
+      background-color: #fff;
   }
 }

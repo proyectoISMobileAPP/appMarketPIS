@@ -16,9 +16,11 @@
 <ion-content padding>
   <ion-list>
    <ion-card *ngFor="let productos of productos">
-      <button class="boton" color="verde" ion-button>
+      <button class="boton" color="verde" ion-button (click)="anadirCarrito(productos.prodName,productos.precio)">
           <ion-icon name="cart"></ion-icon>
       </button>
+        <ion-input class="entrada" min="0" type="number" [(ngModel)]="value" placeholder="#">
+        </ion-input>
       <img src={{productos.imagen}}/>
       <div class="card-title">{{productos.prodName}}</div>
       <div class="card-subtitle">{{productos.precio}}</div>

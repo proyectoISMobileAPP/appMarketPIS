@@ -17,6 +17,7 @@ public catSel;
 public seleccionados;  
 catProd:[any];
 productos:[any];
+value:number=0;
 
 
  //categorias=[{name: "Lacteos",image: "assets/img/lacteos.jpg"},
@@ -50,6 +51,10 @@ categorias=[{name: "Lacteos",productos:[{prodName:"leche",precio:"6.50",imagen:"
       alert("Error categoria"); 
     } 
         
-    }
+  }
+  anadirCarrito(nombre,precio)
+  {
+      alert("Producto "+nombre+"; Precio "+precio+"; Cantidad "+this.value);
+  }
 
 }
