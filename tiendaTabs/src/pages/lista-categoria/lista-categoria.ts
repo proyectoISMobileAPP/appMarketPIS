@@ -22,7 +22,7 @@ productos:[any];
  //categorias=[{name: "Lacteos",image: "assets/img/lacteos.jpg"},
  //             {name: "Carnes",image: "assets/img/carnes.jpg"},
  //             {name: "Frutas",image: "assets/img/frutasyverduras.jpg"}];
-categorias=[{name: "Lacteos",productos:[{prodName:"leche",precio:"6.50",imagen:"assets/img/lacteos.jpg"},{prodName:"yogurt",precio:"10.00",imagen:""},{prodName:"queso",precio:"8.50",imagen:""}]},
+categorias=[{name: "Lacteos",productos:[{prodName:"leche",precio:"6.50",imagen:"assets/img/leche.jpg"},{prodName:"yogurt",precio:"10.00",imagen:""},{prodName:"queso",precio:"8.50",imagen:""}]},
               {name: "Carnes",productos:[{prodName:"Pollo",precio:"12.50",imagen:"assets/img/carnes.jpg"},{prodName:"Res",precio:"18.00",imagen:""},{prodName:"Chorizo",precio:"25.00",imagen:""}]},
               {name: "Frutas",productos:[{prodName:"Piña",precio:"6.00",imagen:"assets/img/frutasyverduras.jpg"},{prodName:"Naranja",precio:"0.50",imagen:""},{prodName:"Manzana",precio:"2.50",imagen:""}]}];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -38,13 +38,13 @@ categorias=[{name: "Lacteos",productos:[{prodName:"leche",precio:"6.50",imagen:"
         switch (this.catSel) 
     { 
     case'Lacteos': 
-      this.productos=[{prodName:"leche",precio:"6.50",imagen:"assets/img/lacteos.jpg"},{prodName:"yogurt",precio:"10.00",imagen:"assets/img/lacteos.jpg"},{prodName:"queso",precio:"8.50",imagen:"assets/img/lacteos.jpg"}];
+      this.productos=[{prodName:"leche",precio:"6.50",imagen:"assets/img/leche.jpg"},{prodName:"yogurt",precio:"10.00",imagen:"assets/img/yogurt.jpg"},{prodName:"queso",precio:"8.50",imagen:"assets/img/queso.jpg"}];
       break; 
     case'Carnes':  
-      this.productos=[{prodName:"Pollo",precio:"12.50",imagen:"assets/img/carnes.jpg"},{prodName:"Res",precio:"18.00",imagen:"assets/img/carnes.jpg"},{prodName:"Chorizo",precio:"25.00",imagen:"assets/img/carnes.jpg"}];
+      this.productos=[{prodName:"Pollo",precio:"12.50",imagen:"assets/img/pollo.jpg"},{prodName:"Res",precio:"18.00",imagen:"assets/img/res.jpg"},{prodName:"Salchicha",precio:"25.00",imagen:"assets/img/salchicha.jpg"}];
       break;
     case'Frutas':  
-      this.productos=[{prodName:"Piña",precio:"6.00",imagen:"assets/img/frutasyverduras.jpg"},{prodName:"Naranja",precio:"0.50",imagen:"assets/img/frutasyverduras.jpg"},{prodName:"Manzana",precio:"2.50",imagen:"assets/img/frutasyverduras.jpg"}];
+      this.productos=[{prodName:"Piña",precio:"6.00",imagen:"assets/img/pina.jpg"},{prodName:"Naranja",precio:"0.50",imagen:"assets/img/naranja.jpg"},{prodName:"Manzana",precio:"2.50",imagen:"assets/img/manzana.jpg"}];
       break; 
     default: 
       alert("Error categoria"); 
