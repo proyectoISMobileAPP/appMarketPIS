@@ -1,6 +1,8 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
@@ -13,6 +15,16 @@ import {ListaCategoriaPage} from '../pages/lista-categoria/lista-categoria';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
+import { BaseDatosProvider } from '../providers/base-datos/base-datos';
+
+export const firebaseConfig={
+    apiKey: "AIzaSyBZX_MKibzI1GxR2gj2W72FGqB1l9n4CsI",
+    authDomain: "appmarketionic.firebaseapp.com",
+    databaseURL: "https://appmarketionic.firebaseio.com",
+    projectId: "appmarketionic",
+    storageBucket: "appmarketionic.appspot.com",
+    messagingSenderId: "172945895287"
+  };
 
 @NgModule({
   declarations: [
@@ -27,7 +39,9 @@ import { IonicStorageModule } from '@ionic/storage';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -43,6 +57,7 @@ import { IonicStorageModule } from '@ionic/storage';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    BaseDatosProvider,
   ]
 })
 export class AppModule {}

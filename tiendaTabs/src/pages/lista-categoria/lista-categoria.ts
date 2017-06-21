@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angular';
+import { BaseDatosProvider } from '../../providers/base-datos/base-datos';
 
 /**
  * Generated class for the ListaCategoriaPage page.
@@ -18,22 +19,24 @@ public seleccionados;
 catProd:[any];
 productos:[any];
 value:number=0;
-
-
- //categorias=[{name: "Lacteos",image: "assets/img/lacteos.jpg"},
- //             {name: "Carnes",image: "assets/img/carnes.jpg"},
- //             {name: "Frutas",image: "assets/img/frutasyverduras.jpg"}];
+productosBD: any[]=[];
 categorias=[{name: "Lacteos",productos:[{prodName:"leche",precio:"6.50",imagen:"assets/img/leche.jpg"},{prodName:"yogurt",precio:"10.00",imagen:""},{prodName:"queso",precio:"8.50",imagen:""}]},
               {name: "Carnes",productos:[{prodName:"Pollo",precio:"12.50",imagen:"assets/img/carnes.jpg"},{prodName:"Res",precio:"18.00",imagen:""},{prodName:"Chorizo",precio:"25.00",imagen:""}]},
               {name: "Frutas",productos:[{prodName:"Piña",precio:"6.00",imagen:"assets/img/frutasyverduras.jpg"},{prodName:"Naranja",precio:"0.50",imagen:""},{prodName:"Manzana",precio:"2.50",imagen:""}]}];
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              private bdProvider: BaseDatosProvider,
+              private alertCtrl: AlertController) {
     this.catSel=navParams.get("catSeleccionada");
     console.log("categoria seleccionada:"+this.catSel);
     this.buscar();
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ListaCategoriaPage');
+    this.bdProvider.getAll()
+    .subscribe(productosBD =>{
+      this.productosBD = productosBD;
+    });
   }
    buscar() {
         switch (this.catSel) 
@@ -56,5 +59,49 @@ categorias=[{name: "Lacteos",productos:[{prodName:"leche",precio:"6.50",imagen:"
   {
       alert("Producto "+nombre+"; Precio "+precio+"; Cantidad "+this.value);
   }
-
+  showAlert(){
+    let alert = this.alertCtrl.create({
+      title: 'Agregar una producto',
+      message: 'Introduzca el nuevo producto',
+      inputs: [
+        {
+          name: 'codigoProd',
+          placeholder:"Codigo Del Producto"
+        },
+        {
+          name: 'nombre',
+          placeholder: "Nombre"
+        },
+        {
+          name: 'precio',
+          placeholder: "Precio"
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: ()=>{
+            console.log('Click en cancelar');
+          }
+        },
+        {
+          text: 'Guardar',
+          handler: (data)=>{
+            this.createProduct(data.codigoProd,data.nombre,data.precio);
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+  private createProduct(codigoProd: string,nombre: string,precio: string){
+    let newProduct = {
+      codigoProd: codigoProd,
+      nombre: nombre,
+      precio: precio
+    }
+    this.bdProvider.create(newProduct);
+  }
+  
 }
