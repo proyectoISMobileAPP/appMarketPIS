@@ -21,7 +21,7 @@
 <ion-content padding>
   <ion-list>
    <ion-card *ngFor="let productos of productos">
-      <button class="boton" color="verde" ion-button (click)="anadirCarrito(productos.prodName,productos.precio)">
+      <button class="boton" color="verde" ion-button (click)="createPC(productos.prodName,productos.precio)">
           <ion-icon name="cart"></ion-icon>
       </button>
         <ion-input class="entrada" min="0" type="number" [(ngModel)]="value" placeholder="#">

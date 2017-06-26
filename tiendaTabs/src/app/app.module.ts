@@ -16,6 +16,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
 import { BaseDatosProvider } from '../providers/base-datos/base-datos';
+import { BdSqlProvider } from '../providers/bd-sql/bd-sql';
 
 export const firebaseConfig={
     apiKey: "AIzaSyBZX_MKibzI1GxR2gj2W72FGqB1l9n4CsI",
@@ -58,6 +59,7 @@ export const firebaseConfig={
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     BaseDatosProvider,
+    BdSqlProvider,
   ]
 })
 export class AppModule {}
