@@ -9,6 +9,7 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { CuentaPage } from '../pages/cuenta/cuenta';
+import { NuevaCuentaPage } from '../pages/nuevacuenta/nuevacuenta';
 import { TabsPage } from '../pages/tabs/tabs';
 import {ListaCategoriaPage} from '../pages/lista-categoria/lista-categoria';
 
@@ -18,12 +19,14 @@ import { IonicStorageModule } from '@ionic/storage';
 import { BaseDatosProvider } from '../providers/base-datos/base-datos';
 
 export const firebaseConfig={
-    apiKey: "AIzaSyBZX_MKibzI1GxR2gj2W72FGqB1l9n4CsI",
-    authDomain: "appmarketionic.firebaseapp.com",
-    databaseURL: "https://appmarketionic.firebaseio.com",
-    projectId: "appmarketionic",
-    storageBucket: "appmarketionic.appspot.com",
-    messagingSenderId: "172945895287"
+
+    apiKey: "AIzaSyA-UG59TrVifkZvbsha8NQlt-rbPAWnHTM",
+    authDomain: "proyectosoftware-553aa.firebaseapp.com",
+    databaseURL: "https://proyectosoftware-553aa.firebaseio.com",
+    projectId: "proyectosoftware-553aa",
+    storageBucket: "proyectosoftware-553aa.appspot.com",
+    messagingSenderId: "983537630680"
+
   };
 
 @NgModule({
@@ -33,6 +36,7 @@ export const firebaseConfig={
     ContactPage,
     HomePage,
     CuentaPage,
+    NuevaCuentaPage,
     TabsPage,
     ListaCategoriaPage
   ],
@@ -48,6 +52,7 @@ export const firebaseConfig={
     MyApp,
     AboutPage,
     ContactPage,
+    NuevaCuentaPage,
     HomePage,
     CuentaPage,
     TabsPage,

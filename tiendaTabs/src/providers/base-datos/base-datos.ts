@@ -13,9 +13,10 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class BaseDatosProvider {
 productosBD: FirebaseListObservable<any>;
-
+usuariosbd: FirebaseListObservable<any>;
   constructor(private fireDatabase: AngularFireDatabase) {
     this.productosBD=this.fireDatabase.list('/productos');
+    this.usuariosbd=this.fireDatabase.list('/usuarios');
   }
   getAll(){
     return this.productosBD;
@@ -25,4 +26,7 @@ productosBD: FirebaseListObservable<any>;
     return this.productosBD.push(task);
   }
 
+  createUser(user){
+    return this.usuariosbd.push(user);
+  }
 }
