@@ -3,6 +3,7 @@ import { BaseDatosProvider } from '../../providers/base-datos/base-datos';
 import { NavController, AlertController, NavParams, LoadingController } from 'ionic-angular';
 import { FormBuilder, Validators } from '@angular/forms';
 import { HomePage } from '../home/home';
+import { ContactPage } from '../contact/contact';
 
 @Component({
   
@@ -40,7 +41,7 @@ usersBD: any[]=[];
       console.log(this.registerForm.value);
     } else {
       this.authService.register(this.registerForm.value.email, this.registerForm.value.password).then( authService => {
-        this.navCtrl.setRoot(HomePage);
+        this.navCtrl.push(ContactPage);
       }, error => {
         this.loading.dismiss().then( () => {
           let alert = this.alertCtrl.create({

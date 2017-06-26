@@ -45,7 +45,7 @@ constructor(public navCtrl: NavController, public authService: BaseDatosProvider
       console.log(this.loginForm.value);
     } else {
       this.authService.doLogin(this.loginForm.value.email, this.loginForm.value.password).then( authService => {
-        this.navCtrl.setRoot(HomePage);
+        this.navCtrl.push(CuentaPage);
       }, error => {
         this.loading.dismiss().then( () => {
           let alert = this.alertCtrl.create({
