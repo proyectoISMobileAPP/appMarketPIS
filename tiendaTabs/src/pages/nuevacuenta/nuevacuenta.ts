@@ -26,7 +26,7 @@ addUser(){
       password: this.password
 
     }
-   this.bdProvider.createUser(user);
+   //this.bdProvider.createUser(user);
    alert(this.nombre+"/"+this.apellido+"/"+this.email);
   }
 

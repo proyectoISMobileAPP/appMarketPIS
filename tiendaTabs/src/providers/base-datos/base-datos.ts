@@ -3,6 +3,7 @@ import {Observable} from 'rxjs/Observable';
 import { Http } from '@angular/http';
 import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database';
 import 'rxjs/add/operator/map';
+import firebase from 'firebase';
 
 /*
   Generated class for the BaseDatosProvider provider.
@@ -13,10 +14,12 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class BaseDatosProvider {
 productosBD: FirebaseListObservable<any>;
-usuariosbd: FirebaseListObservable<any>;
+public fireAuth: any;
+public userData: any;
   constructor(private fireDatabase: AngularFireDatabase) {
     this.productosBD=this.fireDatabase.list('/productos');
-    this.usuariosbd=this.fireDatabase.list('/usuarios');
+    this.fireAuth = firebase.auth();
+    this.userData = firebase.database().ref('/usuarios');
   }
   getAll(){
     return this.productosBD;
@@ -25,8 +28,24 @@ usuariosbd: FirebaseListObservable<any>;
   create(task){
     return this.productosBD.push(task);
   }
-
-  createUser(user){
-    return this.usuariosbd.push(user);
+  doLogin(email: string, password: string): any {
+    return this.fireAuth.signInWithEmailAndPassword(email, password);
   }
+
+  register(email: string, password: string): any {
+    return this.fireAuth.createUserWithEmailAndPassword(email, password)
+      .then((newUser) => {
+        this.userData.child(newUser.uid).set({email: email});
+      });
+  }
+
+  resetPassword(email: string): any {
+    return this.fireAuth.sendPasswordResetEmail(email);
+  }
+
+  doLogout(): any {
+    return this.fireAuth.signOut();
+  }
+
+
 }
