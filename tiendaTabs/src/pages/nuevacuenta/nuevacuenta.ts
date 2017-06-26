@@ -4,17 +4,30 @@ import { NavParams } from 'ionic-angular';
 import { BaseDatosProvider } from '../../providers/base-datos/base-datos';
 @Component({
   
-  templateUrl: 'cuenta.html'
+  templateUrl: 'nuevacuenta.html'
 })
-export class CuentaPage {
+export class NuevaCuentaPage {
+nombre: [any];
+apellido: [any];
+email: [any];
+password: [any];
+
 usersBD: any[]=[];
   constructor(public navCtrl: NavController, private navParams: NavParams, private bdProvider: BaseDatosProvider) {
-     let id = navParams.get('id');
-     let name = navParams.get('name');
+    
 
 }
+
 addUser(){
-  
-}
+    let user = {
+      nombre: this.nombre,
+      apellido: this.apellido,
+      email: this.email,
+      password: this.password
+
+    }
+   this.bdProvider.createUser(user);
+   alert(this.nombre+"/"+this.apellido+"/"+this.email);
+  }
 
 }
