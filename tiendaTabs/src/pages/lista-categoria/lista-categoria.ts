@@ -42,13 +42,19 @@ categorias=[{name: "Lacteos",productos:[{prodName:"leche",precio:"6.50",imagen:"
         switch (this.catSel) 
     { 
     case'Lacteos': 
-      this.productos=[{prodName:"leche",precio:"6.50",imagen:"assets/img/leche.jpg"},{prodName:"yogurt",precio:"10.00",imagen:"assets/img/yogurt.jpg"},{prodName:"queso",precio:"8.50",imagen:"assets/img/queso.jpg"}];
+      this.productos=[{codProd:"prod00001",prodName:"leche",precio:"6.50",imagen:"assets/img/leche.jpg",categoria:"lacteos"},
+      {codProd:"prod00002",prodName:"yogurt",precio:"10.00",imagen:"assets/img/yogurt.jpg",categoria:"lacteos"},
+      {codProd:"prod00003",prodName:"queso",precio:"8.50",imagen:"assets/img/queso.jpg",categoria:"lacteos"}];
       break; 
     case'Carnes':  
-      this.productos=[{prodName:"Pollo",precio:"12.50",imagen:"assets/img/pollo.jpg"},{prodName:"Res",precio:"18.00",imagen:"assets/img/res.jpg"},{prodName:"Salchicha",precio:"25.00",imagen:"assets/img/salchicha.jpg"}];
+      this.productos=[{codProd:"prod00004",prodName:"Pollo",precio:"12.50",imagen:"assets/img/pollo.jpg",categoria:"carnes"},
+      {codProd:"prod00005",prodName:"Res",precio:"18.00",imagen:"assets/img/res.jpg",categoria:"carnes"},
+      {codProd:"prod00006",prodName:"Salchicha",precio:"25.00",imagen:"assets/img/salchicha.jpg",categoria:"carnes"}];
       break;
     case'Frutas':  
-      this.productos=[{prodName:"Piña",precio:"6.00",imagen:"assets/img/pina.jpg"},{prodName:"Naranja",precio:"0.50",imagen:"assets/img/naranja.jpg"},{prodName:"Manzana",precio:"2.50",imagen:"assets/img/manzana.jpg"}];
+      this.productos=[{codProd:"prod00007",prodName:"Piña",precio:"6.00",imagen:"assets/img/pina.jpg",categoria:"frutas"},
+      {codProd:"prod00008",prodName:"Naranja",precio:"0.50",imagen:"assets/img/naranja.jpg",categoria:"frutas"},
+      {codProd:"prod00009",prodName:"Manzana",precio:"2.50",imagen:"assets/img/manzana.jpg",categoria:"frutas"}];
       break; 
     default: 
       alert("Error categoria"); 
@@ -59,7 +65,7 @@ categorias=[{name: "Lacteos",productos:[{prodName:"leche",precio:"6.50",imagen:"
   {
       alert("Producto "+nombre+"; Precio "+precio+"; Cantidad "+this.value);
   }
-  showAlert(){
+  /*showAlert(){
     let alert = this.alertCtrl.create({
       title: 'Agregar una producto',
       message: 'Introduzca el nuevo producto',
@@ -94,12 +100,14 @@ categorias=[{name: "Lacteos",productos:[{prodName:"leche",precio:"6.50",imagen:"
       ]
     });
     alert.present();
-  }
-  private createProduct(codigoProd: string,nombre: string,precio: string){
+  }*/
+  private addPedido(codProd: string,nombre: string,precio: string,categoria:string){
     let newProduct = {
-      codigoProd: codigoProd,
+      codigoProd: codProd,
       nombre: nombre,
-      precio: precio
+      precio: precio,
+      categoria:categoria,
+      cantidad:this.value
     }
     this.bdProvider.create(newProduct);
   }

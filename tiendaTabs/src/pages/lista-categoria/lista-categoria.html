@@ -9,9 +9,9 @@
   <ion-navbar>
     <ion-title>{{catSel}}</ion-title>
     <ion-buttons right>
-      <button ion-button icon-only (click)="showAlert()">
+      <!--<button ion-button icon-only (click)="showAlert()">
         <ion-icon name="add"></ion-icon>
-      </button>
+      </button>}-->
     </ion-buttons>
   </ion-navbar>
 
@@ -21,14 +21,16 @@
 <ion-content padding>
   <ion-list>
    <ion-card *ngFor="let productos of productos">
-      <button class="boton" color="verde" ion-button (click)="anadirCarrito(productos.prodName,productos.precio)">
+      <button class="boton" color="verde" ion-button (click)="addPedido(productos.codProd,productos.prodName,productos.precio,productos.categoria)">
           <ion-icon name="cart"></ion-icon>
       </button>
         <ion-input class="entrada" min="0" type="number" [(ngModel)]="value" placeholder="#">
         </ion-input>
       <img src={{productos.imagen}}/>
       <div class="card-title">{{productos.prodName}}</div>
-      <div class="card-subtitle">{{productos.precio}}</div>
+      <div class="precio">{{productos.precio}}</div>
+      <div class="codigo">{{productos.codProd}}</div>
+      <div class="categoria">{{productos.categoria}}</div>
     </ion-card>
  </ion-list>
 </ion-content>

@@ -41,4 +41,37 @@ page-lista-categoria {
       margin: auto; 
       background-color: #fff;
   }
+  .categoria{
+    font-size: 1.5em;
+    position: absolute;
+    text-align: left;
+    top: 65%;
+    left: 70%;
+    width: 100%;
+    color: #000;
+    font-family: "Planer";
+
+  }
+  .precio{
+    font-size: 1.5em;
+    position: absolute;
+    text-align: left;
+    top: 85%;
+    width: 100%;
+    color: #000;
+    font-family: "Planer";
+
+  }
+  .codigo{
+    font-size: 1.5em;
+    position: absolute;
+    text-align: left;
+    top: 75%;
+    left: 70%;
+    width: 100%;
+    color: #000;
+    font-family: "Planer";
+
+  }
+  
 }

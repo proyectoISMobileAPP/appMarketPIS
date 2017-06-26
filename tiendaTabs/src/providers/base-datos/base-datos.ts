@@ -18,7 +18,7 @@ productosBD: FirebaseListObservable<any>;
 public fireAuth: any;
   public userData: any;
   constructor(private fireDatabase: AngularFireDatabase) {
-    this.productosBD=this.fireDatabase.list('/productos');
+    this.productosBD=this.fireDatabase.list('/carrito');
      this.fireAuth = firebase.auth();
     this.userData = firebase.database().ref('/userBD')
   }
@@ -26,8 +26,8 @@ public fireAuth: any;
     return this.productosBD;
   }
 
-  create(task){
-    return this.productosBD.push(task);
+  create(pedido){
+    return this.productosBD.push(pedido);
   }
 
   createUser(user){

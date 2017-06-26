@@ -9,12 +9,17 @@
 <ion-content padding>
 
 <ion-list>
-  <ion-item *ngFor="let producto of productos">
-    <ion-avatar item-start>
-      <img src="{{producto.imagen}}">
-    </ion-avatar>
-    <h2>{{producto.prodName}}</h2>
+  <ion-item *ngFor="let producto of productosBD">
+    <h2 class="titulo">Nombre:</h2>
+    <h3>{{producto.nombre}}</h3>
+    <h2 class="titulo">Precio:</h2>
     <h3>{{producto.precio}}</h3>
+    <h2 class="titulo">Codigo del Producto:</h2>
+    <h3>{{producto.codigoProd}}</h3>
+    <h2 class="titulo">Categoria:</h2>
+    <h3>{{producto.categoria}}</h3>
+    <h2 class="titulo">Cantidad:</h2>
+    <h3>{{producto.cantidad}}</h3>
   </ion-item>
 </ion-list>
 

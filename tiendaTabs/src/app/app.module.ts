@@ -20,12 +20,12 @@ import { BaseDatosProvider } from '../providers/base-datos/base-datos';
 
 export const firebaseConfig={
 
-    apiKey: "AIzaSyA-UG59TrVifkZvbsha8NQlt-rbPAWnHTM",
-    authDomain: "proyectosoftware-553aa.firebaseapp.com",
-    databaseURL: "https://proyectosoftware-553aa.firebaseio.com",
-    projectId: "proyectosoftware-553aa",
-    storageBucket: "proyectosoftware-553aa.appspot.com",
-    messagingSenderId: "983537630680"
+    apiKey: "AIzaSyBZX_MKibzI1GxR2gj2W72FGqB1l9n4CsI",
+    authDomain: "appmarketionic.firebaseapp.com",
+    databaseURL: "https://appmarketionic.firebaseio.com",
+    projectId: "appmarketionic",
+    storageBucket: "appmarketionic.appspot.com",
+    messagingSenderId: "172945895287"
 
   };
 
