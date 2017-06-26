@@ -5,6 +5,7 @@ import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/databa
 import 'rxjs/add/operator/map';
 import firebase from 'firebase';
 
+
 /*
   Generated class for the BaseDatosProvider provider.
 
@@ -15,11 +16,11 @@ import firebase from 'firebase';
 export class BaseDatosProvider {
 productosBD: FirebaseListObservable<any>;
 public fireAuth: any;
-public userData: any;
+  public userData: any;
   constructor(private fireDatabase: AngularFireDatabase) {
     this.productosBD=this.fireDatabase.list('/productos');
-    this.fireAuth = firebase.auth();
-    this.userData = firebase.database().ref('/usuarios');
+     this.fireAuth = firebase.auth();
+    this.userData = firebase.database().ref('/userBD')
   }
   getAll(){
     return this.productosBD;
@@ -27,6 +28,10 @@ public userData: any;
 
   create(task){
     return this.productosBD.push(task);
+  }
+
+  createUser(user){
+    return this.userData.push(user);
   }
   doLogin(email: string, password: string): any {
     return this.fireAuth.signInWithEmailAndPassword(email, password);
@@ -46,6 +51,4 @@ public userData: any;
   doLogout(): any {
     return this.fireAuth.signOut();
   }
-
-
 }

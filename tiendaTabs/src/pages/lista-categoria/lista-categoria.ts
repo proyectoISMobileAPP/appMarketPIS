@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angular';
 import { BaseDatosProvider } from '../../providers/base-datos/base-datos';
-//import { BdSqlProvider } from '../../providers/bd-sql/bd-sql';
 
 /**
  * Generated class for the ListaCategoriaPage page.
@@ -21,15 +20,13 @@ catProd:[any];
 productos:[any];
 value:number=0;
 productosBD: any[]=[];
-carrito: any[] = [];
 categorias=[{name: "Lacteos",productos:[{prodName:"leche",precio:"6.50",imagen:"assets/img/leche.jpg"},{prodName:"yogurt",precio:"10.00",imagen:""},{prodName:"queso",precio:"8.50",imagen:""}]},
               {name: "Carnes",productos:[{prodName:"Pollo",precio:"12.50",imagen:"assets/img/carnes.jpg"},{prodName:"Res",precio:"18.00",imagen:""},{prodName:"Chorizo",precio:"25.00",imagen:""}]},
               {name: "Frutas",productos:[{prodName:"Piña",precio:"6.00",imagen:"assets/img/frutasyverduras.jpg"},{prodName:"Naranja",precio:"0.50",imagen:""},{prodName:"Manzana",precio:"2.50",imagen:""}]}];
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private bdProvider: BaseDatosProvider,
-              private alertCtrl: AlertController,
-              /*private bdSQLProvider: BdSqlProvider*/) {
+              private alertCtrl: AlertController) {
     this.catSel=navParams.get("catSeleccionada");
     console.log("categoria seleccionada:"+this.catSel);
     this.buscar();
@@ -79,10 +76,6 @@ categorias=[{name: "Lacteos",productos:[{prodName:"leche",precio:"6.50",imagen:"
           name: 'precio',
           placeholder: "Precio"
         },
-         {
-          name: 'categoria',
-          placeholder: "categoria"
-        }
       ],
       buttons: [
         {
@@ -95,38 +88,20 @@ categorias=[{name: "Lacteos",productos:[{prodName:"leche",precio:"6.50",imagen:"
         {
           text: 'Guardar',
           handler: (data)=>{
-            this.createProduct(data.codigoProd,data.nombre,data.precio,data.categoria);
+            this.createProduct(data.codigoProd,data.nombre,data.precio);
           }
         }
       ]
     });
     alert.present();
   }
-  private createProduct(codigoProd: string,nombre: string,precio: string,categoria: string){
+  private createProduct(codigoProd: string,nombre: string,precio: string){
     let newProduct = {
       codigoProd: codigoProd,
       nombre: nombre,
-      precio: precio,
-      categoria:categoria
+      precio: precio
     }
     this.bdProvider.create(newProduct);
   }
-  /*private createPC(idProd: string,nombre: string,precio: string,cantidad: number,categoria: string){
-    let newPC = {
-      idProducto: idProd,
-      nombre: nombre,
-      precio: precio,
-      cantidad:cantidad,
-      categoria:categoria
-    }
-    this.bdSQLProvider.create(newPC)
-    .then((data) =>{
-      this.carrito.unshift(newPC);
-      console.log(data.rows.item(data.insertId));
-    })
-    .catch(error =>{
-      console.error(error);
-    })
-  }*/
   
 }
