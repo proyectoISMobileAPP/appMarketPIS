@@ -29,7 +29,7 @@ constructor(public navCtrl: NavController, public authService: BaseDatosProvider
     let field = input.inputControl.name;
     this[field + "Changed"] = true;
   }
-
+//redirecciona pagina de registro
   register(){
     this.navCtrl.push(NuevaCuentaPage);
   }
@@ -37,7 +37,7 @@ constructor(public navCtrl: NavController, public authService: BaseDatosProvider
   resetPwd(){
    // this.navCtrl.push(ResetpwdPage);
   }
-
+//iniciar sesion
   loginUser(){
     this.submitAttempt = true;
 
@@ -67,6 +67,7 @@ constructor(public navCtrl: NavController, public authService: BaseDatosProvider
       this.loading.present();
     }
   }
+  //nos redireccion pagina de registro
   pushToNewUser(){
     // push another page onto the navigation stack
     // causing the nav controller to transition to the new page

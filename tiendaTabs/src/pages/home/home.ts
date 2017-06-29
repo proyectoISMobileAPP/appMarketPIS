@@ -14,7 +14,7 @@ export class HomePage {
               {name: "Frutas",image: "assets/img/frutasyverduras.jpg"}];
   constructor(public navCtrl: NavController) {
   }
-  
+  //nos redirecciona a los productos de la categoria seleccionada
   pushPage(categoria)
   {
     this.navCtrl.push(ListaCategoriaPage,{catSeleccionada:categoria});

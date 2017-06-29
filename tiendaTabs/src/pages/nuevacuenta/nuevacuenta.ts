@@ -33,7 +33,7 @@ usersBD: any[]=[];
     let field = input.inputControl.name;
     this[field + "Changed"] = true;
   }
-
+//registra usuario nuevo
   doRegister(){
     this.submitAttempt = true;
 

@@ -20,9 +20,6 @@ catProd:[any];
 productos:[any];
 value:number=0;
 productosBD: any[]=[];
-categorias=[{name: "Lacteos",productos:[{prodName:"leche",precio:"6.50",imagen:"assets/img/leche.jpg"},{prodName:"yogurt",precio:"10.00",imagen:""},{prodName:"queso",precio:"8.50",imagen:""}]},
-              {name: "Carnes",productos:[{prodName:"Pollo",precio:"12.50",imagen:"assets/img/carnes.jpg"},{prodName:"Res",precio:"18.00",imagen:""},{prodName:"Chorizo",precio:"25.00",imagen:""}]},
-              {name: "Frutas",productos:[{prodName:"Piña",precio:"6.00",imagen:"assets/img/frutasyverduras.jpg"},{prodName:"Naranja",precio:"0.50",imagen:""},{prodName:"Manzana",precio:"2.50",imagen:""}]}];
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private bdProvider: BaseDatosProvider,
@@ -31,13 +28,14 @@ categorias=[{name: "Lacteos",productos:[{prodName:"leche",precio:"6.50",imagen:"
     console.log("categoria seleccionada:"+this.catSel);
     this.buscar();
   }
-
+//carga y realiza conexion base de datos firebase
   ionViewDidLoad() {
     this.bdProvider.getAll()
     .subscribe(productosBD =>{
       this.productosBD = productosBD;
     });
   }
+//iltra productos por categoria
    buscar() {
         switch (this.catSel) 
     { 
@@ -97,6 +95,7 @@ categorias=[{name: "Lacteos",productos:[{prodName:"leche",precio:"6.50",imagen:"
     });
     alert.present();
   }*/
+  //anade productos al carrito
   private addPedido(codProd: string,nombre: string,precio: string,categoria:string){
     let newProduct = {
       codigoProd: codProd,

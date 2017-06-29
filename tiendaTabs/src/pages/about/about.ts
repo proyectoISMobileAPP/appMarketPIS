@@ -13,6 +13,7 @@ export class AboutPage {
               private bdProvider: BaseDatosProvider) {
 
   }
+  //cargamos base de datos de firebase para usarla en el html
   ionViewDidLoad() {
     this.bdProvider.getAll()
     .subscribe(productosBD =>{

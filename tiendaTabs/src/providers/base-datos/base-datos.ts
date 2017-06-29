@@ -7,10 +7,7 @@ import firebase from 'firebase';
 
 
 /*
-  Generated class for the BaseDatosProvider provider.
-
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular 2 DI.
+  Conexion y metodos firebase
 */
 @Injectable()
 export class BaseDatosProvider {

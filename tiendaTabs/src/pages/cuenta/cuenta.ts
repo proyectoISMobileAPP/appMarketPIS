@@ -13,8 +13,6 @@ usersBD: any[]=[];
      let name = navParams.get('name');
 
 }
-addUser(){
-  
-}
+
 
 }
