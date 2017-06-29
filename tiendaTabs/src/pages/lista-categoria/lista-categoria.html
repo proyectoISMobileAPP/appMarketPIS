@@ -13,6 +13,8 @@
         <ion-icon name="add"></ion-icon>
       </button>}-->
     </ion-buttons>
+    <ion-input class="entrada" min="0" type="number" [(ngModel)]="value" placeholder="#">
+        </ion-input>
   </ion-navbar>
 
 </ion-header>
@@ -24,8 +26,8 @@
       <button class="boton" color="verde" ion-button (click)="addPedido(productos.codProd,productos.prodName,productos.precio,productos.categoria)">
           <ion-icon name="cart"></ion-icon>
       </button>
-        <ion-input class="entrada" min="0" type="number" [(ngModel)]="value" placeholder="#">
-        </ion-input>
+       <!-- <ion-input class="entrada" min="0" type="number" [(ngModel)]="value" placeholder="#">
+        </ion-input>-->
       <img src={{productos.imagen}}/>
       <div class="card-title">{{productos.prodName}}</div>
       <div class="precio">{{productos.precio}}</div>
