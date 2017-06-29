@@ -37,7 +37,7 @@ $colors: (
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
-
+$font-family-ios-base: "name", -apple-system, "Helvetica Neue", "Roboto", sans-serif;
 
 
 // App Material Design Variables
@@ -45,14 +45,14 @@ $colors: (
 // Material Design only Sass variables can go here
 
 
-
+$font-family-md-base: "name", "Roboto", "Helvetica Neue", sans-serif;
 
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
 
 
-
+$font-family-wp-base: "name", "Segoe UI", "Noto Sans", sans-serif;
 
 // App Theme
 // --------------------------------------------------

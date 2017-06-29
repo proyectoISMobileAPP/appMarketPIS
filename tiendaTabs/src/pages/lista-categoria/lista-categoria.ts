@@ -61,10 +61,6 @@ categorias=[{name: "Lacteos",productos:[{prodName:"leche",precio:"6.50",imagen:"
     } 
         
   }
-  anadirCarrito(nombre,precio)
-  {
-      alert("Producto "+nombre+"; Precio "+precio+"; Cantidad "+this.value);
-  }
   /*showAlert(){
     let alert = this.alertCtrl.create({
       title: 'Agregar una producto',
