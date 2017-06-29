@@ -1,35 +1,35 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>register</ion-title>
+    <ion-title>Registrarse</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <h2>Register</h2>
+  <h2 style="color:white">Registrarse</h2>
   <form [formGroup]="registerForm" (submit)="doRegister()" novalidate>
     <ion-item>
-      <ion-label stacked>Email</ion-label>
+      <ion-label stacked>correo electronico</ion-label>
       <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"
-        placeholder="Your email address"
+        placeholder="Tu direccion de correo electronico"
         [class.invalid]="!registerForm.controls.email.valid && (emailChanged || submitAttempt)"></ion-input>
     </ion-item>
     <ion-item class="error-message" *ngIf="!registerForm.controls.email.valid  && (emailChanged || submitAttempt)">
-      <p>Please enter a valid email.</p>
+      <p>Por favor ingrese un correo electronico valido.</p>
     </ion-item>
     <ion-item>
-      <ion-label stacked>Password</ion-label>
+      <ion-label stacked>contraseña</ion-label>
       <ion-input #password formControlName="password" type="password" (change)="elementChanged(password)"
-        placeholder="Your password"
+        placeholder="tu contraseña"
         [class.invalid]="!registerForm.controls.password.valid && (passwordChanged || submitAttempt)"></ion-input>
     </ion-item>
     <ion-item class="error-message" *ngIf="!registerForm.controls.password.valid  && (passwordChanged || submitAttempt)">
-      <p>Your password needs more than 6 characters.</p>
+      <p>Tu contraseña requiere 6 o mas caracteres.</p>
     </ion-item>
-    <button color="verde" ion-button  block type="submit">
-      Register
+    <button color="verde" style="font-weight:bold" ion-button  block type="submit">
+      Registrar
     </button>
   </form>
 </ion-content>

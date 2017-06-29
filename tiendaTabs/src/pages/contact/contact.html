@@ -9,25 +9,25 @@
 
 
 <ion-content>
-  <h2 text-center>Please, Login</h2>
+  <h2 text-center>Por favor, inicie sesión</h2>
   <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
     <ion-item>
-      <ion-label stacked>Email</ion-label>
+      <ion-label stacked>correo electronico</ion-label>
       <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"
-        placeholder="Your email address"
+        placeholder="Tu direccion de email."
         [class.invalid]="!loginForm.controls.email.valid && (emailChanged || submitAttempt)"></ion-input>
     </ion-item>
     <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid  && (emailChanged || submitAttempt)">
-      <p>Please enter a valid email.</p>
+      <p>Por favor ingrese un correo electronico valido.</p>
     </ion-item>
     <ion-item>
-      <ion-label stacked>Password</ion-label>
+      <ion-label stacked>Contraseña</ion-label>
       <ion-input #password formControlName="password" type="password" (change)="elementChanged(password)"
-        placeholder="Your password"
+        placeholder="Tu contraseña"
         [class.invalid]="!loginForm.controls.password.valid && (passwordChanged || submitAttempt)"></ion-input>
     </ion-item>
     <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid  && (passwordChanged || submitAttempt)">
-      <p>Your password needs more than 6 characters.</p>
+      <p>Tu contraseña requiere 6 o más caracteres.</p>
     </ion-item>
     <button style="font-weight: bold" color="verde"  ion-button block type="submit" margin-top>
       Iniciar Sesion
@@ -36,8 +36,8 @@
   <ion-list>
 <HR WIDHT=100% SIZE=10>
    
-   <h5 style="color:white"> Ya tienes una cuenta? Registrate ahora </h5>
-   <button color="verde" ion-button clear face="Planer" (click)="pushToNewUser()">Crear cuenta</button>
+   <h5 style="color:white;font-weight:bold"> Ya tienes una cuenta? Registrate ahora </h5>
+   <button style="color:white; font-weight:bold" ion-button clear face="Planer" (click)="pushToNewUser()">Crear cuenta</button>
 
 </ion-list>
 </ion-content>
